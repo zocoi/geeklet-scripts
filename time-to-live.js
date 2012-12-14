@@ -12,15 +12,19 @@ years = days * 365;
 
 age = 65 * years;
 
-now = new Date().getTime();
+now = Date.now();
 
-timeLeft = birthdate + years - now;
+timeLeft = birthdate + age - now;
+
+timeLeftInMinutes = Math.round(timeLeft / minutes);
 
 timeLeftInHours = Math.round(timeLeft / hours);
 
 timeLeftInDays = Math.round(timeLeft / days);
 
 timeLeftInYears = Math.round(timeLeft / years);
+
+console.log("Minutes left to live: ", timeLeftInMinutes);
 
 console.log("Hours left to live: ", timeLeftInHours);
 
