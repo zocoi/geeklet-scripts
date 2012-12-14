@@ -1,3 +1,5 @@
+/*! Hung Dao | MIT license */
+
 var age, birthdate, days, hours, minutes, now, timeLeft, timeLeftInDays, timeLeftInHours, timeLeftInYears, years;
 
 birthdate = Date.parse("November 10, 1987");
@@ -16,18 +18,22 @@ now = Date.now();
 
 timeLeft = birthdate + age - now;
 
-timeLeftInMinutes = Math.round(timeLeft / minutes);
-
-timeLeftInHours = Math.round(timeLeft / hours);
+// timeLeftInMinutes = Math.round(timeLeft / minutes);
+// 
+// timeLeftInHours = Math.round(timeLeft / hours);
 
 timeLeftInDays = Math.round(timeLeft / days);
 
-timeLeftInYears = Math.round(timeLeft / years);
+// timeLeftInYears = Math.round(timeLeft / years);
 
-console.log("Minutes left to live: ", timeLeftInMinutes);
+// Minus the time you sleep
+timeLeftInDaysBeingAwake = Math.round(timeLeftInDays * (1 - 8/24))
 
-console.log("Hours left to live: ", timeLeftInHours);
+// console.log("Minutes left to live: \n", timeLeftInMinutes);
 
-console.log("Days left to live: ", timeLeftInDays);
+// console.log("Hours left to live: ", timeLeftInHours);
 
-console.log("Years left to live: ", timeLeftInYears);
+console.log("Days left to live: \n", timeLeftInDays);
+console.log("Actual days left to live: \n", timeLeftInDaysBeingAwake);
+
+// console.log("Years left to live: ", timeLeftInYears);
