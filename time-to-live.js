@@ -1,8 +1,24 @@
-/*! Hung Dao | MIT license */
+/*! Hung Dao | MIT license 
+*
+* node time-to-live.js "November 10, 1987" 65
+*/
 
-var age, birthdate, days, hours, minutes, now, timeLeft, timeLeftInDays, timeLeftInHours, timeLeftInYears, years;
+var date, estimatedAge, age, birthdate, days, hours, minutes, now, timeLeft, timeLeftInDays, timeLeftInHours, timeLeftInYears, years;
 
-birthdate = Date.parse("November 10, 1987");
+if(process && process.argv) {
+  date = process.argv[2]
+  estimatedAge = process.argv[3]
+}
+
+if (date == null || typeof date == "undefined") {
+  date = "November 10, 1987"
+}
+
+if (estimatedAge == null || typeof estimatedAge == "undefined") {
+  estimatedAge = 65
+}
+
+birthdate = Date.parse(date);
 
 minutes = 1000 * 60;
 
@@ -12,7 +28,7 @@ days = hours * 24;
 
 years = days * 365;
 
-age = 65 * years;
+age = estimatedAge * years;
 
 now = Date.now();
 
